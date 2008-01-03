@@ -1,7 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
-using GoogleChartSharp;
+package com.a2a.googlechart;
 
 namespace Tests
 {

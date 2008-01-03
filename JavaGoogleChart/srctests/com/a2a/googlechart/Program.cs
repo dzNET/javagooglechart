@@ -1,10 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
-using GoogleChartSharp;
-using System.Diagnostics;
-using System.Drawing;
-using System.IO;
+package com.a2a.googlechart;
 
 namespace Tests
 {
