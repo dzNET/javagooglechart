@@ -1,7 +1,6 @@
 package com.a2a.googlechart.charts;
 
 import java.util.ArrayList;
-import java.util.Vector;
 
 import com.a2a.googlechart.ChartAxis;
 import com.a2a.googlechart.FillArea;
@@ -239,14 +238,14 @@ public abstract class Chart
             	s += "|";
         }
         
-        return s;
+        return trimEnd(s,'|');
     }
 
-    public void setLegend(Vector strs)
+    public void setLegend(String[] strs)
     {
-        for (int i=0;i<strs.size();i++)
+        for (int i=0;i<strs.length;i++)
         {
-        	String s = (String) strs.get(i);
+        	String s = (String) strs[i];
             legendStrings.add(s);
         }
     }
@@ -316,7 +315,7 @@ public abstract class Chart
         {
         	for(int i=0;i<linearGradientFills.size();i++)
             {
-        		LinearGradientFill linearGradient = (LinearGradientFill) solidFills.get(i);
+        		LinearGradientFill linearGradient = (LinearGradientFill) linearGradientFills.get(i);
                 fillsString += linearGradient.getUrlString() + "|";
             }
         }
@@ -324,7 +323,7 @@ public abstract class Chart
         {
         	for(int i=0;i<linearStripesFills.size();i++)
             {
-        		LinearStripesFill linearStripesFill = (LinearStripesFill) solidFills.get(i);
+        		LinearStripesFill linearStripesFill = (LinearStripesFill) linearStripesFills.get(i);
         		fillsString += linearStripesFill.getUrlString() + "|";
             }
         }

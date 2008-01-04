@@ -12,6 +12,7 @@ public class PieChart extends Chart
     public PieChart(int width, int height)
     {
     	super(width, height);
+    	this.pieChartType = TwoD;
     }
 
     public PieChart(int width, int height, String pieChartType)        
