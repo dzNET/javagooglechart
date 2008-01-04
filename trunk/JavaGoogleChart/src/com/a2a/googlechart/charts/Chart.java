@@ -1,6 +1,7 @@
 package com.a2a.googlechart.charts;
 
 import java.util.ArrayList;
+import java.util.Vector;
 
 import com.a2a.googlechart.ChartAxis;
 import com.a2a.googlechart.FillArea;
@@ -148,6 +149,12 @@ public abstract class Chart
     /// <param name="lengthBlankSegment">Length of each blank segment in a grid line</param>
     public void setGrid(float xAxisStepSize, float yAxisStepSize, float lengthLineSegment, float lengthBlankSegment) throws InvalidFeatureForChartTypeException
     {
+        String chartType = getChartType();
+        if (!(chartType.equals(Chart.chartLineChart) || chartType.equals(Chart.chartScatterPlot)))
+    	{
+            throw new InvalidFeatureForChartTypeException();
+        }
+
         this.gridXAxisStepSize = xAxisStepSize;
         this.gridYAxisStepSize = yAxisStepSize;
         this.gridLengthLineSegment = lengthLineSegment;
@@ -235,7 +242,14 @@ public abstract class Chart
         return s;
     }
 
-    
+    public void setLegend(Vector strs)
+    {
+        for (int i=0;i<strs.size();i++)
+        {
+        	String s = (String) strs.get(i);
+            legendStrings.add(s);
+        }
+    }
 
     public void addAxis(ChartAxis axis)
     {

@@ -3,9 +3,8 @@ package com.a2a.googlechart.charts;
 import java.util.ArrayList;
 
 import com.a2a.googlechart.exception.InvalidFeatureForChartTypeException;
-import com.a2a.googlechart.interfaces.ILegendChart;
 
-public class LineChart extends Chart implements ILegendChart
+public class LineChart extends Chart
 {
     public static String SingleDataSet = "SingleDataSet";
     public static String MultiDataSet  = "MultiDataSet";
