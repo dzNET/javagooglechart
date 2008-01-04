@@ -2,7 +2,10 @@ package com.a2a.googlechart.charts;
 
 import java.util.ArrayList;
 
-public class LineChart extends Chart
+import com.a2a.googlechart.exception.InvalidFeatureForChartTypeException;
+import com.a2a.googlechart.interfaces.ILegendChart;
+
+public class LineChart extends Chart implements ILegendChart
 {
     public static String SingleDataSet = "SingleDataSet";
     public static String MultiDataSet  = "MultiDataSet";
@@ -47,7 +50,7 @@ public class LineChart extends Chart
     /// first line will use the first line style.
     /// </summary>
     /// <param name="lineStyle"></param>
-    public void AddLineStyle(LineStyle lineStyle)
+    public void addLineStyle(LineStyle lineStyle)
     {
         lineStyles.add(lineStyle);
     }
@@ -74,6 +77,20 @@ public class LineChart extends Chart
     {
         return Chart.chartLineChart;
     }
+    
+    public void setGrid(float xAxisStepSize, float yAxisStepSize, float lengthLineSegment, float lengthBlankSegment) throws InvalidFeatureForChartTypeException
+    {
+        throw new InvalidFeatureForChartTypeException();
+    }
+
+	public void setLegend(String[] strs) {
+
+		for (int i=0;i<strs.length;i++)
+        {
+        	String s = (String) strs[i];
+            legendStrings.add(s);
+        }
+	}
 }
 
 class LineStyle

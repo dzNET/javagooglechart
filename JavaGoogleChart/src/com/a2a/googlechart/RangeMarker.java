@@ -3,8 +3,8 @@ package com.a2a.googlechart;
 
 public class RangeMarker
 {
-    private static String Horizontal = "Horizontal";
-    private static String Vertical = "Vertical";
+	public static String Horizontal = "Horizontal";
+	public static String Vertical = "Vertical";
     
     private String type;
     private String color;

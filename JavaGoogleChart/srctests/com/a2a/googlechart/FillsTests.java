@@ -18,8 +18,8 @@ public class FillsTests
         SolidFill bgFill = new SolidFill(SolidFill.Background, "EFEFEF");
         SolidFill chartAreaFill = new SolidFill(SolidFill.ChartArea, "000000");
 
-        lineChart.AddSolidFill(bgFill);
-        lineChart.AddSolidFill(chartAreaFill);
+        lineChart.addSolidFill(bgFill);
+        lineChart.addSolidFill(chartAreaFill);
 
         return lineChart.getUrl();
     }
@@ -40,8 +40,8 @@ public class FillsTests
 
         SolidFill bgFill = new SolidFill(SolidFill.Background, "EFEFEF");
 
-        lineChart.AddLinearGradientFill(fill);
-        lineChart.AddSolidFill(bgFill);
+        lineChart.addLinearGradientFill(fill);
+        lineChart.addSolidFill(bgFill);
 
         return lineChart.getUrl();
     }
@@ -59,9 +59,9 @@ public class FillsTests
         LinearStripesFill linearStripesFill = new LinearStripesFill(SolidFill.ChartArea, 0);
         linearStripesFill.AddColorWidthPair("CCCCCC", 0.2);
         linearStripesFill.AddColorWidthPair("FFFFFF", 0.2);
-        chart.AddLinearStripesFill(linearStripesFill);
+        chart.addLinearStripesFill(linearStripesFill);
 
-        chart.AddSolidFill(new SolidFill(SolidFill.Background, "EFEFEF"));
+        chart.addSolidFill(new SolidFill(SolidFill.Background, "EFEFEF"));
         
         return chart.getUrl();
     }
