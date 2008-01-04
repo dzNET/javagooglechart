@@ -24,9 +24,9 @@ public class Program
 	        tw.println("<h3>Fills</h3>");
 	        tw.println(getImageTag(FillsTests.multiLineAreaFillsTest()));
 	        tw.println(getImageTag(FillsTests.singleLineAreaFillTest()));
-	        //tw.println(getImageTag(FillsTests.linearGradientFillTest()));
+	        tw.println(getImageTag(FillsTests.linearGradientFillTest()));
 	        tw.println("<br />");
-	        //tw.println(getImageTag(FillsTests.linearStripesTest()));
+	        tw.println(getImageTag(FillsTests.linearStripesTest()));
 	        tw.println(getImageTag(FillsTests.solidFillTest()));
 	        
 	
@@ -54,7 +54,7 @@ public class Program
 	
 	        //region Pie Charts
 	        tw.println("<h3>Pie Charts</h3>");
-	        //tw.println(getImageTag(PieChartTests.TwoDTest()));
+	        tw.println(getImageTag(PieChartTests.TwoDTest()));
 	        tw.println(getImageTag(PieChartTests.ThreeDTest()));
 	        
 	

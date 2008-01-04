@@ -17,7 +17,7 @@ public class GridTests
         	lineChart.setGrid(20, 50);
         }
         catch(Exception e){
-        	
+        	e.printStackTrace();
         }
         return lineChart.getUrl();
     }
@@ -35,7 +35,7 @@ public class GridTests
         	lineChart.setGrid(20, 50, 1, 5);
         }
         catch(Exception e){
-        	
+        	e.printStackTrace();
         }
 
         return lineChart.getUrl();
@@ -54,7 +54,7 @@ public class GridTests
 	        lineChart.setGrid(20, 50, 1, 0);
 	    }
 	    catch(Exception e){
-	    	
+	    	e.printStackTrace();
 	    }
         return lineChart.getUrl();
     }

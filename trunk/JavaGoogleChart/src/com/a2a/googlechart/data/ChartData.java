@@ -60,7 +60,7 @@ public class ChartData
             chartData += simpleEncode(objectArray) + ",";
         }
 
-        return chartData;
+        return Chart.trimEnd(chartData,',');
     }
 
     private static String simpleEncode(int[] data)

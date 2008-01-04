@@ -2,8 +2,6 @@ package com.a2a.googlechart.charts;
 
 import java.util.ArrayList;
 
-import com.a2a.googlechart.exception.InvalidFeatureForChartTypeException;
-
 public class LineChart extends Chart
 {
     public static String SingleDataSet = "SingleDataSet";
@@ -76,20 +74,6 @@ public class LineChart extends Chart
     {
         return Chart.chartLineChart;
     }
-    
-    public void setGrid(float xAxisStepSize, float yAxisStepSize, float lengthLineSegment, float lengthBlankSegment) throws InvalidFeatureForChartTypeException
-    {
-        throw new InvalidFeatureForChartTypeException();
-    }
-
-	public void setLegend(String[] strs) {
-
-		for (int i=0;i<strs.length;i++)
-        {
-        	String s = (String) strs[i];
-            legendStrings.add(s);
-        }
-	}
 }
 
 class LineStyle
