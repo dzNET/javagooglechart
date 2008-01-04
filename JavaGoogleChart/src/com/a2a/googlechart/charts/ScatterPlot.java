@@ -1,6 +1,5 @@
 package com.a2a.googlechart.charts;
 
-import com.a2a.googlechart.exception.InvalidFeatureForChartTypeException;
 
 public class ScatterPlot extends Chart
 {
@@ -21,10 +20,5 @@ public class ScatterPlot extends Chart
     public String getChartType()
     {
         return Chart.chartScatterPlot;
-    }
-    
-    public void setGrid(float xAxisStepSize, float yAxisStepSize, float lengthLineSegment, float lengthBlankSegment) throws InvalidFeatureForChartTypeException
-    {
-        throw new InvalidFeatureForChartTypeException();
     }
 }
