@@ -1,9 +1,14 @@
 package com.a2a.googlechart.charts;
 
 import java.util.ArrayList;
-import java.util.Vector;
 
-import com.a2a.googlechart.*;
+import com.a2a.googlechart.ChartAxis;
+import com.a2a.googlechart.FillArea;
+import com.a2a.googlechart.LinearGradientFill;
+import com.a2a.googlechart.LinearStripesFill;
+import com.a2a.googlechart.RangeMarker;
+import com.a2a.googlechart.ShapeMarker;
+import com.a2a.googlechart.SolidFill;
 import com.a2a.googlechart.data.ChartData;
 import com.a2a.googlechart.data.VectorFloat;
 import com.a2a.googlechart.data.VectorInt;
@@ -79,18 +84,18 @@ public abstract class Chart
         this.titleColor = color;
     }
 
-    public void SetTitle(String title, String color, int fontSize)
+    public void setTitle(String title, String color, int fontSize)
     {
         setTitle(title);
         this.titleColor = color + "," + fontSize;
     }
 
-    public void SetDatasetColors(String[] datasetColors)
+    public void setDatasetColors(String[] datasetColors)
     {
         this.datasetColors = datasetColors;
     }
 
-    public void AddSolidFill(SolidFill solidFill)
+    public void addSolidFill(SolidFill solidFill)
     {
         solidFills.add(solidFill);
     }
@@ -99,7 +104,7 @@ public abstract class Chart
     /// Add a linear gradient fill to this chart.
     /// </summary>
     /// <param name="linearGradientFill"></param>
-    public void AddLinearGradientFill(LinearGradientFill linearGradientFill)
+    public void addLinearGradientFill(LinearGradientFill linearGradientFill)
     {
         linearGradientFills.add(linearGradientFill);
     }
@@ -108,7 +113,7 @@ public abstract class Chart
     /// Add a linear stripes fill to this chart.
     /// </summary>
     /// <param name="linearStripesFill"></param>
-    public void AddLinearStripesFill(LinearStripesFill linearStripesFill)
+    public void addLinearStripesFill(LinearStripesFill linearStripesFill)
     {
         linearStripesFills.add(linearStripesFill);
     }
@@ -143,12 +148,6 @@ public abstract class Chart
     /// <param name="lengthBlankSegment">Length of each blank segment in a grid line</param>
     public void setGrid(float xAxisStepSize, float yAxisStepSize, float lengthLineSegment, float lengthBlankSegment) throws InvalidFeatureForChartTypeException
     {
-        String chartType = getChartType();
-        if (!(chartType.equals(Chart.chartLineChart) || chartType.equals(Chart.chartScatterPlot)))
-        {
-            throw new InvalidFeatureForChartTypeException();
-        }
-
         this.gridXAxisStepSize = xAxisStepSize;
         this.gridYAxisStepSize = yAxisStepSize;
         this.gridLengthLineSegment = lengthLineSegment;
@@ -236,14 +235,7 @@ public abstract class Chart
         return s;
     }
 
-    public void setLegend(Vector strs)
-    {
-        for (int i=0;i<strs.size();i++)
-        {
-        	String s = (String) strs.get(i);
-            legendStrings.add(s);
-        }
-    }
+    
 
     public void addAxis(ChartAxis axis)
     {

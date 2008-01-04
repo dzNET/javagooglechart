@@ -1,13 +1,10 @@
 package com.a2a.googlechart.charts;
 
-import java.util.Vector;
-
-import com.a2a.googlechart.exception.InvalidFeatureForChartTypeException;
 
 public class PieChart extends Chart
 {
     private String pieChartType;
-    private Vector pieChartLabels;
+    private String[] pieChartLabels;
     
     public static String ThreeD = "ThreeD"; 
     public static String TwoD = "TwoD";
@@ -42,11 +39,11 @@ public class PieChart extends Chart
         {
             String s = "chl=";
             
-            for(int i=0;i<pieChartLabels.size();i++)
+            for(int i=0;i<pieChartLabels.length;i++)
             {
-            	String label = (String) pieChartLabels.get(i);
+            	String label = (String) pieChartLabels[i];
                 s += label;
-                if(i<pieChartLabels.size())
+                if(i<pieChartLabels.length)
                 	s += "|";
             }
             
@@ -55,19 +52,10 @@ public class PieChart extends Chart
     }
 
     /// <summary>
-    /// Legend is not supported on Pie Charts
-    /// </summary>
-    /// <param name="strs"></param>
-    public void setLegend(String[] strs) throws InvalidFeatureForChartTypeException
-    {
-        throw new InvalidFeatureForChartTypeException();        
-    }
-
-    /// <summary>
     /// Set labels for the Pie Chart slices
     /// </summary>
     /// <param name="labels">Strings that will be used as label text</param>
-    public void setPieChartLabels(Vector labels)
+    public void setPieChartLabels(String[] labels)
     {
         this.pieChartLabels = labels;
     }
