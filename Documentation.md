@@ -1,0 +1,1 @@
+API can be found here: http://javagooglechart.googlecode.com/svn/trunk/JavaGoogleChart/doc2/index.html
